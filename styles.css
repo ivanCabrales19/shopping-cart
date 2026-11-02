@@ -1,0 +1,129 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-grey: #222;
+  --light-grey: #f5f5f7;
+  --black: #000;
+  --white: #fff;
+  --grey: #c5c5db;
+  --primary-color: #1A7595;
+  --yellow: #ffcc4c;
+  --gold: #feac32;
+  --orange: #ffac33;
+  --btn: #0E97DB;
+  --delete: #EF4242;
+}
+
+body {
+  background-color: var(--light-grey);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.title {
+  color: var(--dark-grey);
+  text-align: center;
+  margin: 25px 0;
+}
+
+#dessert-card-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.dessert-card {
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  background-color: var(--white);
+  padding: 15px;
+  text-align: center;
+  border-radius: 15px;
+  margin: 20px 10px;
+}
+
+.dessert-price {
+  font-size: 1.2rem;
+}
+
+.btn {
+  display: block;
+  cursor: pointer;
+  width: 100px;
+  color: var(--white);
+  background-color: var(--btn);
+  border: 2px solid transparent;
+  padding: 3px 5px;
+  border-radius: 5px;
+  margin: 5px 3px;
+  transition: background-color 0.3s ease, transform 0.3s;
+}
+
+@media(pointer: fine){
+    .btn:hover {
+  background-color: var(--primary-color);
+}
+}
+.btn:active {
+    transform: scale(0.97);
+}
+
+#cart-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.add-to-cart-btn {
+    margin: 0 auto;
+}
+
+#cart-container {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  color: var(--dark-grey);
+  background-color: var(--white);
+  width: 200px;
+  height: 300px;
+  border: 2px solid var(--grey);
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1.2rem;
+  overflow-y: auto;
+}
+
+.product {
+  margin: 25px 0;
+}
+
+.product-count {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.product-category {
+  margin: 10px 0;
+}
+
+@media (min-width: 768px) {
+  #dessert-card-container {
+    flex-direction: row;
+  }
+
+  .dessert-card {
+    flex: 1 0 21%;
+  }
+
+  #cart-container {
+    width: 300px;
+  }
+}
